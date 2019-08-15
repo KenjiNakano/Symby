@@ -86,7 +86,7 @@ def diff(exp, target)
 end
 
 s = ""  
-File.open("sample.txt"){|f|
+File.open("sample_expr_data.txt"){|f|
   s = f.read
 }
 
