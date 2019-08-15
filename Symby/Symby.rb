@@ -7,7 +7,6 @@ require './Multiply'
 require './Trigonometric'
 require './Pow'
 require './Add'
-#require './AddedMultiply'
 require './Quasient'
 require './Polynomial'
 
@@ -86,6 +85,7 @@ def diff(exp, target)
   m.diff(target)
 end
 
+=begin
 two = Number.new(2)
 three = Number.new(3)
 addtwothree = two + three
@@ -121,3 +121,4 @@ ddf = diff(df, x)
 
 f = tan(x)
 df = diff(f, x)
+=end

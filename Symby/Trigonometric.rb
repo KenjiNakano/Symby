@@ -137,7 +137,7 @@ class Tan
     Quasient.create(sin(@exp), cos(@exp)).diff(target)
   end
 
-   def debug
+  def debug
     str = "["
     str += "(class:#{self.class})"
     str += "(@exp=#{@exp.debug})"
