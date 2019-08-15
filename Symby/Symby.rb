@@ -32,6 +32,8 @@ class Machine
   end
 
   def diff(target)
+    @expression.diff(target)
+=begin
     p "===Diff==="
     p "<<#{@expression.show}>> is differenciated by <<#{target}>>"
     @expression = @expression.diff(target)
@@ -40,8 +42,9 @@ class Machine
     #p "******** DIFF END ********"
     #p @expression.debug
     @expression
+=end
   end
-
+  
   def expand
     p "===Expand==="
     p "<<#{@expression.show}>>"""

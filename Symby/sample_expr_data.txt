@@ -1,6 +1,12 @@
+#x is variable
 x = Variable.new("x")
+p x.show
+
+#f is x times sin(x)
 f = x*sin(x)
+p f.show
 
-df = diff(f, x)
+#f is differentiated by x
+result = diff(f, x)
+p result.show
 
-df.show
