@@ -85,6 +85,13 @@ def diff(exp, target)
   m.diff(target)
 end
 
+s = ""  
+File.open("sample.txt"){|f|
+  s = f.read
+}
+
+eval(s)
+
 =begin
 two = Number.new(2)
 three = Number.new(3)
