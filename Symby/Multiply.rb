@@ -126,39 +126,46 @@ class Multiply
   end
 
   def show
-    #p "@coefficient=#{@coefficient}"
-    #p "@variables=#{@variables}"
+    if @coefficient == Number.new(0) 
+      return @coefficient.to_s
+    end
 
-    if @coefficient == Number.new(0)
+    arr = []
+    if coefficient_show != ""
+      arr.push(coefficient_show)
+    end
+
+    if variables_show != ""
+      arr.push(variables_show)
+    end
+
+    return arr.join("*")
+  end
+
+  def coefficient_show
+    if @coefficient == Number.new(1)
       return ""
     end
+    return @coefficient.show
+  end
 
-    str = ""
-    if @coefficient != Number.new(1)
-      if @variables.count == 0
-        return @coefficient.to_s
-      end
-      str += @coefficient.to_s + "*"
-    end
-
-    #variables = @variables.select{ |a| a.instance_of?(Variable) }
+  def variables_show
+    arr = []
     variables = @variables
     if variables.count >= 1
       vuniq = variables.uniq
       vuniq.each{ |v|
         cnt = variables.select{ |f| f == v }.count
         if cnt == 1
-          str += "#{v}*"
+          arr.push(v.show)
+          #str += "#{v}*"
         else
-          str += "(#{v}**#{cnt})*"
+          arr.push("(#{v.show}**#{cnt})")
+          #str += "(#{v}**#{cnt})*"
         end
       }
     end
-
-    if str[-1] == "*"
-      str = str[0..-2]
-    end
-    return str
+    return arr.join("*")
   end
 
   def expandable?

@@ -3,4 +3,4 @@ f = x*sin(x)
 
 df = diff(f, x)
 
-df.to_s
+df.show
